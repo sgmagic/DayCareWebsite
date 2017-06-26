@@ -1,0 +1,62 @@
+:host{
+    display: flex;
+    align-items: flex-start;
+    justify-content: initial;
+  
+}
+
+:host(.vertical-menu){
+    display: inline-block;
+    width: 200px;
+    padding-left: 4px;
+   
+    background-color: white;
+    overflow: auto;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+    margin-left: 0px;
+    padding: 0;
+    flex-wrap:nowrap;
+}
+
+li{
+    display: flex;
+    
+    flex-wrap:nowrap;
+  
+}
+
+
+.btnSignin{
+background: white;
+margin: 10px;
+margin-left: 50px;
+height: 60px;
+margin-top: 20px;
+color: #7b1fa2;
+}
+
+.btnSignin:hover{
+  background: #7b1fa2;  
+  color: white;
+}
+
+.btnRegister{
+background: white;
+color: #7b1fa2;
+margin: 10px;
+height: 60px;
+margin-top: 20px;
+}
+
+.btnRegister:hover{
+background: #F6CE35;
+color:white;
+}
+
+
+
+

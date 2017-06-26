@@ -1,0 +1,51 @@
+:host{
+    display: flex;
+}
+
+.title-bar{
+    flex-grow: 1;
+    display: flex;
+    max-height: 80px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    z-index:99;
+}
+
+.menu-area{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-right: 20px;
+    background-color:white; 
+     
+   }
+
+.title-bar-small{
+    flex-grow: 1;
+    display: flex;
+    max-height: 56px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    z-index:99;
+}
+
+.small-image-holder{
+    flex-grow: 1;
+    text-align: center;
+}
+
+.small-image{
+    height: 50px;
+    width: 100px;
+    
+}
+
+span{
+    margin-left: 10px;
+    margin-right:20px;
+    font-size: 25px;
+    line-height: 50px;
+}
+
+.glyphicon{
+    color: #7b1fa2;
+}

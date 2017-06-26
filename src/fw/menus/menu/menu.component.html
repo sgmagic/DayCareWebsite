@@ -1,0 +1,18 @@
+<nav>
+  <ul>
+    <li *ngFor="let item of menuService.items">
+      <fw-menu-item [item]="item" [ngClass]="{'vertical-menu': menuService.isVertical}">
+      </fw-menu-item>
+
+    </li>
+    <button routerLink="/login"
+  routerLinkActive="router-link-active"
+  md-raised-button class="btnSignin">Sign In</button>
+    
+    <button routerLink="/signup"
+    routerLinkActive="router-link-active"
+     md-raised-button class="btnRegister">Sing Up</button>
+   
+  
+  </ul>
+</nav>

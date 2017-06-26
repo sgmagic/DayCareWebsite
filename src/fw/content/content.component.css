@@ -1,0 +1,11 @@
+:host{
+    display: flex;
+    flex-grow: 1;
+    background-color: #7b1fa2;   
+}
+
+.body-style {
+    padding: 20px;
+    /*flex-grow: 1;*/
+    color: white;
+}

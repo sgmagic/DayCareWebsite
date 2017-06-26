@@ -1,0 +1,160 @@
+/*:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*height: 100vh;
+    width: 100vw;
+    background-color: #7b1fa2;
+    text-align: center;
+}*/
+
+.register-form{
+    display: flex;
+    align-self: center;;
+    flex-direction: column;
+    background-color: white;
+    opacity: .93;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    color: black;
+    border-radius: 5px;
+}
+
+.alert{
+    margin-top: 30px;
+}
+
+
+mat-tab-labels{
+    align-self: center;
+}
+
+.full-width{
+width: 70%;
+align-self:center;
+}
+
+.tabHeader {
+   font-size: 15px; 
+   color: black;
+}
+
+#thirdPartySignin {
+    color: #7b1fa2;
+    display: inline-block;
+font-size: 30px;
+}
+
+#socilLogin {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px;
+    font-size: 20px;
+}
+
+#socialIcons a{ 
+    font-size: 30px;
+   margin: 10px 30px 0px 30px;
+   color:#7b1fa2;
+}
+
+#google:hover{
+color: #DE5245 !important;
+text-decoration: none;
+}
+
+#facebook:hover{
+    color: #3B5998 !important;
+    text-decoration: none;
+}
+
+#tweeter:hover{
+    color: #55ACEE !important;
+    text-decoration: none;
+}
+
+img{
+    margin: auto;
+}
+/*a{
+    line-height: 32px;
+}*/
+
+
+#register{
+    float: right;
+    background-color: #7b1fa2;
+    border-color: #7b1fa2;
+
+    color: white;
+}
+
+#register:disabled{
+    background-color: #ECF0F1;
+    color: #BDC3C7;
+}
+
+#register:disabled:hover{
+    background-color: #ECF0F1;
+    color: #BDC3C7;
+}
+#register:hover{
+    background-color:#F6CE35;
+    color: #7b1fa2;
+    border-color: #7b1fa2;
+}
+
+#cancel{
+    color: #F6CE35;
+    float: left;
+}
+#cancel:disabled{
+    display: none;
+}
+
+
+#cancel:hover{
+    color: #7b1fa2;
+}
+
+h3{
+    color: #7b1fa2;
+    margin-bottom: 20px;
+}
+
+input{
+    color: #F6CE35;
+}
+
+
+.slideingForms{
+    margin-top: 20px;
+}
+
+.role-radio-group{
+    display: inline-flex;
+  flex-direction: row;
+  
+}
+
+.role-radio-button {
+ 
+  margin: 10px;
+}
+
+#roleSelector {
+    text-align: center;
+}
+
+.form-group{
+    text-align: center;
+}
+
+/*.message{
+    float: right;
+}*/
+
+.error-text{
+    color: red;
+}

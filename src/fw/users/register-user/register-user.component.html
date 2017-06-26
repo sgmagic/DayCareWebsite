@@ -1,0 +1,128 @@
+<fw-dialog [(visible)]="showLogin">
+  <div class="register-form">
+    <img width="200" src="../../assets/logo.svg" />
+
+    <h3>Sign Up</h3>
+    <md-tab-group [selectedIndex]="selectedTab">
+
+      <!--Account Section-->
+      <md-tab [disabled]="true">
+
+        <!--Header Section-->
+        <ng-template md-tab-label>
+          <div class="tabHeader">
+            <i class="fa fa-lock" aria-hidden="true"></i> Account
+          </div>
+        </ng-template>
+
+        <!--Form-->
+        <form #account="ngForm" class="slideingForms" novalidate>
+
+          <div class="form-group">
+            <md-input-container class="full-width">
+              <input name="username" mdInput required placeholder="Email Address" [(ngModel)]="user.username" #username="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
+            </md-input-container>
+            <!--<div [hidden]="username.valid || username.pristine" class="error-text">-->
+            <div class="error-text">
+              <small [hidden]="username.valid || (username.pristine && !account.submitted)">
+              Email is required and 
+              <br/>
+              format should be <i>abc@xyz.com</i>.
+            </small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <md-input-container class="full-width">
+              <input name="password" validateEqual="retypepassword" reverse="true" mdInput required placeholder="Password" type="password"
+                [(ngModel)]="user.password" #password="ngModel" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$">
+            </md-input-container>
+            
+            <div class="error-text">
+              <small [hidden]="password.valid || (password.pristine && !account.submitted)">
+              Password is required and 
+              <br/>
+              should contain UpperCase, LowerCase and Number.
+            </small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <md-input-container class="full-width">
+              <input name="retypepassword" mdInput required placeholder="Retype Password" type="password" ngModel #retypepassword="ngModel"
+                required validateEqual="password" [(ngModel)]="user.retypepassword">
+            </md-input-container>
+            <div class="error-text">
+              <small [hidden]="retypepassword.valid || (retypepassword.pristine && !account.submitted)">
+            Password Mismatch
+          </small>
+            </div>
+          </div>
+
+
+          <button [disabled]="account.invalid" id="register" (click)="nextTab(false)" md-raised-button type="submit">Next</button>
+          <button id="cancel" md-button routerLink="/home" routerLinkActive="active">Cancel</button>
+        </form>
+
+      </md-tab>
+
+      <!--Account Type Section-->
+      <md-tab [disabled]="true">
+
+        <!--Header Section-->
+        <ng-template md-tab-label>
+          <div class="tabHeader">
+            <span class="glyphicon glyphicon-cog"></span> Account Type
+          </div>
+        </ng-template>
+
+        <!--Form-->
+        <form #f1="ngForm" class="slideingForms">
+
+          <div class="form-group">
+            <md-radio-group required class="role-radio-group" name="isadmin" [(ngModel)]="user.isadmin" required>
+              <md-radio-button name="admin" class="role-radio-button" value="true">
+                I Am Staff/Admin
+              </md-radio-button>
+              <md-radio-button name="parent" class="role-radio-button" value="false">
+                I Am Parent
+              </md-radio-button>
+            </md-radio-group>
+          </div>
+          <button id="register" [disabled]="f1.invalid" type="submit" (click)="nextTab(true)" md-raised-button>Next</button>
+          <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
+          />
+          <button id="cancel" [disabled]="f1.valid" md-button (click)="prevTab()" routerLinkActive="active">Back</button>
+          <button id="cancel" [disabled]="f1.invalid" md-button routerLink="/home" routerLinkActive="active" routerLinkActive="active">Cancel</button>
+        </form>
+
+      </md-tab>
+
+      <!--Verify Email-->
+      <md-tab [disabled]="true">
+        <!--Header Section-->
+        <ng-template md-tab-label>
+          <div class="tabHeader">
+            <i class="fa fa-check-circle-o" aria-hidden="true"></i> Verify Email
+          </div>
+        </ng-template>
+
+        <div class="alert alert-success" role="alert" *ngIf="!error">
+          Registered Successfully! Please Verify your Email and <a routerLink="/login" routerLinkActive="active" class="alert-link">Login</a>
+        </div>
+
+        <div class="alert alert-danger" role="alert" *ngIf="error">
+          <strong>Oh snap!</strong> It seems there is some problem with your registration please <a routerLink="/signup"
+            routerLinkActive="active">try again</a> or <a routerLink="/aboutus"
+            routerLinkActive="active">Contact Us</a>
+        </div>
+
+
+        <button id="register" md-button (click)="close()">Close</button>
+
+      </md-tab>
+    </md-tab-group>
+
+  </div>
+
+</fw-dialog>

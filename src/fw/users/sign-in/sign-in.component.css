@@ -1,0 +1,116 @@
+
+
+.sign-in-form{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    min-width: 300px;
+    border-radius: 5px;
+    background-color: white;
+    /*opacity: .93;*/
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+input{
+    color: #F6CE35;
+}
+
+#register{
+    float: left;
+    color: #F6CE35;
+    margin-top:1px;
+}
+
+#register:hover{
+   
+    color:#7b1fa2;
+  
+}
+
+#submit{
+    float: right;
+    background-color:#7b1fa2;
+    color:white;
+    border-color: #7b1fa2;
+}
+
+#submit:disabled{
+    background-color: #ECF0F1;
+    color: #BDC3C7;
+}
+
+#submit:hover:enabled{
+    background-color: #F6CE35;
+    border-color: #7b1fa2;
+    color: #7b1fa2; 
+}
+
+.message{
+    float: right;
+}
+
+.full-width {
+width: 100%;
+float: center;
+}
+
+#signinhelp{
+    margin-bottom: 30px;
+    color: #7b1fa2;
+}
+
+#signinhelp a{
+     color: #7b1fa2;
+     float:right;
+}
+
+h3{
+    color: #7b1fa2;
+    margin-bottom: 20px;
+}
+
+img{
+    margin: auto;  
+}
+
+#thirdPartySignin {
+    color: #7b1fa2;
+    display: inline-block;
+font-size: 30px;
+margin: 10px;
+}
+
+#socilLogin {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px;
+    font-size: 20px;
+    
+}
+
+#socialIcons a{ 
+    font-size: 30px;
+   margin: 10px 30px 0px 30px;
+   color:#7b1fa2;
+}
+
+#google:hover{
+color: #DE5245 !important;
+text-decoration: none;
+}
+
+#facebook:hover{
+    color: #3B5998 !important;
+    text-decoration: none;
+}
+
+#tweeter:hover{
+    color: #55ACEE !important;
+    text-decoration: none;
+}
+
+.error-text{
+    color: red;
+}

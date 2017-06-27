@@ -9,6 +9,14 @@ export class UserService {
   registerUser(user: User) {
         return this.http.post('/api/users', user, this.jwt()).map((response: Response) => response.json());
     }
+
+  delete(id: number) {
+        return this.http.delete('/api/users/' + id, this.jwt()).map((response: Response) => response.json());
+    }
+
+  getById(id: number) {
+        return this.http.get('/api/users/' + id, this.jwt()).map((response: Response) => response.json());
+    }
  // public helper methods
 
     public jwt() {

@@ -837,15 +837,15 @@ showLogin:boolean&#x3D;true;
   loading &#x3D; false;
   submitting &#x3D; false;
   error &#x3D; false;
-private user: User;
+public user: User;
 
 
 
 
-  constructor(private route: ActivatedRoute,
-        private router: Router,
-        private authenticationService: AuthenticationService,
-        private alertService: AlertService) {
+  constructor(public route: ActivatedRoute,
+        public router: Router,
+        public authenticationService: AuthenticationService,
+        public alertService: AlertService) {
           
    }
 

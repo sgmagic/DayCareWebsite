@@ -658,7 +658,7 @@ import { MenuService } from &#x27;../../services/menu.service&#x27;;
 export class MenuItemComponent implements OnInit {
 @Input() item &#x3D; &lt;MenuItem&gt;null;
 
-  constructor(private menuService: MenuService) {  }
+  constructor(public menuService: MenuService) {  }
 
   ngOnInit() {
   }

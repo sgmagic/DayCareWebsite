@@ -12,7 +12,7 @@
     "build-prod": "ng build --prod --aot",
     "compodoc": "./node_modules/.bin/compodoc -p tsconfig.json"
   },
-  "private": true,
+  "public": true,
   "dependencies": {
     "@angular/animations": "^4.1.3",
     "@angular/common": "^4.0.0",

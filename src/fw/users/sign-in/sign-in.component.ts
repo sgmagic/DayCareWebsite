@@ -16,15 +16,15 @@ showLogin:boolean=true;
   loading = false;
   submitting = false;
   error = false;
-private user: User;
+public user: User;
 
 
 
 
-  constructor(private route: ActivatedRoute,
-        private router: Router,
-        private authenticationService: AuthenticationService,
-        private alertService: AlertService) {
+  constructor(public route: ActivatedRoute,
+        public router: Router,
+        public authenticationService: AuthenticationService,
+        public alertService: AlertService) {
           
    }
 

@@ -674,7 +674,7 @@ export class EqualValidator implements Validator {
 
     }
 
-    private get isReverse() {
+    public get isReverse() {
         if (!this.reverse) return false;
         return this.reverse &#x3D;&#x3D;&#x3D; &#x27;true&#x27; ? true: false;
     }

@@ -691,10 +691,10 @@ import { Subject } from &#x27;rxjs/Subject&#x27;;
 
 @Injectable()
 export class AlertService {
-    private subject &#x3D; new Subject&lt;any&gt;();
-    private keepAfterNavigationChange &#x3D; false;
+    public subject &#x3D; new Subject&lt;any&gt;();
+    public keepAfterNavigationChange &#x3D; false;
 
-    constructor(private router: Router) {
+    constructor(public router: Router) {
         // clear alert message on route change
         router.events.subscribe(event &#x3D;&gt; {
             if (event instanceof NavigationStart) {

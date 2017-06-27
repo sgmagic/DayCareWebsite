@@ -1,5 +1,5 @@
 <nav>
-  <ul>
+  <ul [ngClass]="{'vertical-menu': menuService.isVertical}">
     <li *ngFor="let item of menuService.items">
       <fw-menu-item [item]="item" [ngClass]="{'vertical-menu': menuService.isVertical}">
       </fw-menu-item>
@@ -7,11 +7,13 @@
     </li>
     <button routerLink="/login"
   routerLinkActive="router-link-active"
-  md-raised-button class="btnSignin">Sign In</button>
+  md-raised-button class="btnSignin"
+  [ngClass]="{'vertical-menu': menuService.isVertical}">Sign In</button>
     
     <button routerLink="/signup"
     routerLinkActive="router-link-active"
-     md-raised-button class="btnRegister">Sing Up</button>
+     md-raised-button class="btnRegister"
+     [ngClass]="{'vertical-menu': menuService.isVertical}">Sing Up</button>
    
   
   </ul>

@@ -696,11 +696,11 @@ import {ScreenService} from &#x27;../services/screen.service&#x27;;
 
 @Directive({selector: &#x27;[screenBelowLarge]&#x27;})
 export class ScreenBelowLarge{
-    private hasView&#x3D;false;
-    private screenSubscription: Subscription;
-    constructor(private viewContainer: ViewContainerRef,
-                private template:TemplateRef&lt;Object&gt;,
-                private screenService: ScreenService) {
+    public hasView&#x3D;false;
+    public screenSubscription: Subscription;
+    constructor(public viewContainer: ViewContainerRef,
+                public template:TemplateRef&lt;Object&gt;,
+                public screenService: ScreenService) {
 
       this.screenSubscription &#x3D;  screenService.resize$.subscribe(() &#x3D;&gt; this.onResize());
     }

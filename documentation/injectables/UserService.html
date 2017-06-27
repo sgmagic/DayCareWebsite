@@ -611,14 +611,14 @@ import { User } from &#x27;../models/user.interface&#x27;;
 
 @Injectable()
 export class UserService {
-  constructor(private http: Http) { }
+  constructor(public http: Http) { }
 
   registerUser(user: User) {
         return this.http.post(&#x27;/api/users&#x27;, user, this.jwt()).map((response: Response) &#x3D;&gt; response.json());
     }
- // private helper methods
+ // public helper methods
 
-    private jwt() {
+    public jwt() {
         // create authorization header with jwt token
         let currentUser &#x3D; JSON.parse(localStorage.getItem(&#x27;currentUser&#x27;));
         if (currentUser &amp;&amp; currentUser.token) {

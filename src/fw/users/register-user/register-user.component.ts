@@ -13,9 +13,9 @@ import { User } from '../../../app/models/user.interface';
 })
 export class RegisterUserComponent implements OnInit {
     showLogin:boolean=true;
-private selectedTab = 0;
-private user: User;
-private error = false;
+public selectedTab = 0;
+public user: User;
+public error = false;
 ngOnInit(){
      
 this.user = {
@@ -30,10 +30,10 @@ this.user = {
 
     loading = false;
 
-    constructor(private route: ActivatedRoute,
-        private router: Router,
-        private userService: UserService,
-        private alertService: AlertService) { }
+    constructor(public route: ActivatedRoute,
+        public router: Router,
+        public userService: UserService,
+        public alertService: AlertService) { }
 
 save(IsSubmitted:boolean) {
     console.log(this.user);

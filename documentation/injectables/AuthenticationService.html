@@ -609,7 +609,7 @@ import &#x27;rxjs/add/operator/map&#x27;
 
 @Injectable()
 export class AuthenticationService {
-    constructor(private http: Http) { }
+    constructor(public http: Http) { }
 
     login(username: string, password: string) {
         return this.http.post(&#x27;/api/authenticate&#x27;, JSON.stringify({ username: username, password: password }))

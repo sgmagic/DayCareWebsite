@@ -896,9 +896,9 @@ import { User } from &#x27;../../../app/models/user.interface&#x27;;
 })
 export class RegisterUserComponent implements OnInit {
     showLogin:boolean&#x3D;true;
-private selectedTab &#x3D; 0;
-private user: User;
-private error &#x3D; false;
+public selectedTab &#x3D; 0;
+public user: User;
+public error &#x3D; false;
 ngOnInit(){
      
 this.user &#x3D; {
@@ -913,10 +913,10 @@ this.user &#x3D; {
 
     loading &#x3D; false;
 
-    constructor(private route: ActivatedRoute,
-        private router: Router,
-        private userService: UserService,
-        private alertService: AlertService) { }
+    constructor(public route: ActivatedRoute,
+        public router: Router,
+        public userService: UserService,
+        public alertService: AlertService) { }
 
 save(IsSubmitted:boolean) {
     console.log(this.user);

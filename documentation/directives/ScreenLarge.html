@@ -702,12 +702,12 @@ import {ScreenService} from &#x27;../services/screen.service&#x27;;
 
 @Directive({selector: &#x27;[screenLarge]&#x27;})
 export class ScreenLarge implements OnDestroy{
-    private hasView&#x3D;false;
-    private screenSubscription: Subscription;
+    public hasView&#x3D;false;
+    public screenSubscription: Subscription;
 
-    constructor(private viewContainer: ViewContainerRef,
-                private template:TemplateRef&lt;Object&gt;,
-                private screenService: ScreenService) {
+    constructor(public viewContainer: ViewContainerRef,
+                public template:TemplateRef&lt;Object&gt;,
+                public screenService: ScreenService) {
 
         this.screenSubscription &#x3D; screenService.resize$.subscribe(() &#x3D;&gt; this.onResize());
     }

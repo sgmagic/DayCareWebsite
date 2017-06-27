@@ -135,7 +135,7 @@ if (typeof(module) !== 'undefined' && typeof(module.exports) !== 'undefined') {
         this._builder.done();
     };
 
-    //**Private**//
+    //**public**//
     Parser.prototype._validateBuilder = function Parser$_validateBuilder (builder) {
         if ((typeof builder) != "object") {
             throw new Error("Builder is not an object");
@@ -780,7 +780,7 @@ function HtmlBuilder (callback, options) {
     };
 
 
-    //**Private**//
+    //**public**//
     //Properties//
     HtmlBuilder.prototype._options = null; //Builder options for how to behave
     HtmlBuilder.prototype._callback = null; //Callback to respond to when parsing done

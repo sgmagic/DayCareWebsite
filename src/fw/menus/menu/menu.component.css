@@ -2,33 +2,77 @@
     display: flex;
     align-items: flex-start;
     justify-content: initial;
+    flex-grow: 1;
   
 }
 
 :host(.vertical-menu){
     display: inline-block;
-    width: 200px;
+    /*width: 200px;*/
     padding-left: 4px;
-   
+   max-width: 200px;
+    min-width: 200px;
     background-color: white;
     overflow: auto;
+    flex-grow: 0;
 }
+/*
+.vertical-menu.btnSignin{
+background: white;
+margin: 10px;
+margin-top: 20px;
+color: #7b1fa2;    
+}
+
+.menu-item.vertical-menu.btnSignin:hover{
+  background: #7b1fa2;  
+  color: white;  
+}
+
+.menu-item.vertical-menu.btnRegister{
+background: white;
+color: #7b1fa2;
+margin: 10px;
+margin-top: 20px;        
+}
+
+.menu-item.vertical-menu.btnRegister:hover{
+background: #F6CE35;
+color:white;    
+}*/
+
+
 
 ul{
     display: flex;
     list-style-type: none;
-    margin-left: 0px;
+    margin: 0;
     padding: 0;
     flex-wrap:nowrap;
+   
 }
 
 li{
     display: flex;
-    
+     
     flex-wrap:nowrap;
   
 }
 
+
+.vertical-menu li{
+    border-width: 1px;
+    border-top-width: 0px;
+    /*border-style: solid;
+    border-color: #7B1FA2;*/
+}
+
+
+
+ul.vertical-menu {
+    display: block;
+    text-decoration: none;
+}
 
 .btnSignin{
 background: white;
@@ -44,6 +88,21 @@ color: #7b1fa2;
   color: white;
 }
 
+.btnSignin.vertical-menu{
+    
+    background: white;
+    margin: 10px;
+    margin-top: 20px;
+    color: #7b1fa2;
+    height: 40px;
+}
+
+.btnSignin.vertical-menu:hover{
+    background: #7b1fa2;  
+    color: white;
+}
+
+
 .btnRegister{
 background: white;
 color: #7b1fa2;
@@ -57,6 +116,16 @@ background: #F6CE35;
 color:white;
 }
 
+.btnRegister.vertical-menu{
+    background: white;
+color: #7b1fa2;
+margin: 10px;
+height: 40px;
+margin-top: 20px;
+}
 
-
+.btnRegister.vertical-menu:hover{
+    background: #F6CE35;
+color:white;
+}
 

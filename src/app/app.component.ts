@@ -9,9 +9,9 @@ import {UserService} from './services/user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(private frameworkConfigService: FrameworkConfigService,
-              private menuService: MenuService,
-              private UserService: UserService){
+  constructor(public frameworkConfigService: FrameworkConfigService,
+              public menuService: MenuService,
+              public UserService: UserService){
 
       let config:FrameworkConfigSettings = {
           socialIcons: [

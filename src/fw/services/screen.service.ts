@@ -3,7 +3,7 @@ import {Subject} from 'rxjs/Subject';
 
 @Injectable()
 export class ScreenService{
-    private resizeSource = new Subject<null>();
+    public resizeSource = new Subject<null>();
     resize$ = this.resizeSource.asObservable();
 
     largeBreakingpoint = 800;

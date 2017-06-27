@@ -12,18 +12,18 @@ import { User } from '../../../app/models/user.interface';
   styleUrls: ['./register-user.component.css']
 })
 export class RegisterUserComponent implements OnInit {
-    showLogin:boolean=true;
-public selectedTab = 0;
-public user: User;
-public error = false;
+    showRegister:boolean=true;
+// public selectedTab = 0;
+user: User;
+error = false;
+success = false;
 ngOnInit(){
-     
+   this.success = false;  
 this.user = {
     id: 0,
     username: null,
     password: null,
     retypepassword: null,
-    isadmin: null
     }
     
 }
@@ -38,7 +38,7 @@ this.user = {
 save(IsSubmitted:boolean) {
     console.log(this.user);
     // call API to save customer
-    if(this.user.isadmin != null && IsSubmitted != false)
+    if( IsSubmitted != false)
     {
         
      this.loading = true;
@@ -47,7 +47,9 @@ save(IsSubmitted:boolean) {
                 data => {
                     this.alertService.success('Registration successful', false);
                     // this.router.navigate(['/home']);
-                    this.nextTab(false);
+                    this.success = true;
+                    this.error = false;
+                   
                 },
                 error => {
                     this.alertService.error(error);
@@ -57,18 +59,18 @@ save(IsSubmitted:boolean) {
     }
   }
 
-nextTab(IsSubmitted:boolean) {
-if (IsSubmitted){
-    this.save(true);
-}
-  this.selectedTab += 1;
-  if (this.selectedTab > 3) this.selectedTab = 0;
-}
+// nextTab(IsSubmitted:boolean) {
+// if (IsSubmitted){
+//     this.save(true);
+// }
+//   this.selectedTab += 1;
+//   if (this.selectedTab > 2) this.selectedTab = 0;
+// }
 
-prevTab() {
-  this.selectedTab -= 1;
-  if (this.selectedTab < 0) this.selectedTab = 3;
-}
+// prevTab() {
+//   this.selectedTab -= 1;
+//   if (this.selectedTab < 0) this.selectedTab = 3;
+// }
 
 
 close()

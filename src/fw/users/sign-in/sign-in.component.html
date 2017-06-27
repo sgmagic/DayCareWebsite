@@ -1,72 +1,83 @@
 <fw-dialog [(visible)]="showLogin">
-<div class="sign-in-form">
-  <img width="200" src="../../assets/logo.svg" />
+  <div class="sign-in-form">
+    <img width="200" src="../../assets/logo.svg" />
 
-<div class="alert alert-danger" role="alert" *ngIf="error">
-   <button type="button" class="close" (click)="error=!error" aria-label="Close">
+
+
+    <h3>Sign In</h3>
+
+    <form #signInForm="ngForm" (ngSubmit)="login()" novalidate>
+
+      <div class="form-group">
+        <md-input-container class="full-width">
+          <input name="username" required mdInput 
+          placeholder="Email Id" 
+          [(ngModel)]="user.username" 
+          #username="ngModel" 
+          pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+          />
+        </md-input-container>
+
+      </div>
+
+      <div class="form-group">
+        <md-input-container class="full-width">
+          <input name="password" required mdInput
+           placeholder="Password" 
+           type="password" [(ngModel)]="user.password" 
+           #password="ngModel"
+           pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" />
+        </md-input-container>
+
+      </div>
+
+      <div id="signinhelp">
+
+        <md-checkbox>Remember me!</md-checkbox>
+        <a routerLink="/forgotpassword" routerLinkActive="active">Forgot Password?</a>
+
+      </div>
+
+
+      <div *ngIf="!submitting">
+        <button id="register" md-button (click)="close()">Cancle</button>
+        <!--<button id="register" md-button routerLink="/register" routerLinkActive="active">Register with Us!</button>-->
+        <button [disabled]="signInForm.invalid" id="submit" type="submit" md-raised-button>Sign In</button>
+
+      </div>
+
+
+      <div *ngIf="submitting">
+        <p class="message">Signing In...</p>
+      </div>
+    </form>
+    <div class="alert alert-danger error" role="alert" *ngIf="error">
+      <button type="button" class="close" (click)="error=!error" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
-  <strong>Oh snap!</strong> It seems the Email/Password is incorrect.
-</div>
+      <strong>Oh snap!</strong> It seems the Email/Password is incorrect.
+    </div>
 
-  <h3>Sign In</h3>
+    <div class="alert alert-danger error" *ngIf="username.invalid && username.touched || password.invalid && password.touched">
 
-  <form #signInForm="ngForm" (ngSubmit)="login()" novalidate>
-
-    <div class="form-group">
-      <md-input-container class="full-width">
-        <input name="username" required mdInput placeholder="Email Id" [(ngModel)]="user.username" 
-        #username="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"/>
-      </md-input-container>
       <small *ngIf="username.invalid && username.touched" class="error-text">
-        Email is required and
+        *Email is required and format should be like abc@xyz.com.
         <br/>
-        format should be like abc@xyz.com.
       </small>
-    </div>
-
-    <div class="form-group">
-      <md-input-container class="full-width">
-        <input name="password" required mdInput placeholder="Password" type="password" 
-        [(ngModel)]="user.password" #password="ngModel" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$"/>
-      </md-input-container>
       <small *ngIf="password.invalid && password.touched" class="error-text">
-        Password is required and 
+        *Password is required and should contain UpperCase, LowerCase and Number.
         <br/>
-        should contain UpperCase, LowerCase and Number.
       </small>
     </div>
-
-    <div id="signinhelp">
-
-      <md-checkbox>Remember me!</md-checkbox>
-      <a routerLink="/forgotpassword" routerLinkActive="active">Forgot Password?</a>
-
+    <div id="socilLogin" style="display:none">
+      <b>Or</b> Signin with your Social Account
+      <div id="socialIcons">
+        <a id="google" class="fa fa-google" aria-hidden="true"></a>
+        <a id="facebook" class="fa fa-facebook" aria-hidden="true"></a>
+        <a id="tweeter" class="fa fa-twitter" aria-hidden="true"></a>
+      </div>
     </div>
 
 
-    <div *ngIf="!submitting">
-      <button id="register" md-button (click)="close()">Cancle</button>
-      <!--<button id="register" md-button routerLink="/register" routerLinkActive="active">Register with Us!</button>-->
-      <button [disabled]="signInForm.invalid" id="submit" type="submit" md-raised-button>Sign In</button>
-
-    </div>
-
-
-    <div *ngIf="submitting">
-      <p class="message">Signing In...</p>
-    </div>
-  </form>
-
-  <div id="socilLogin" style="display:none">
-    <b>Or</b> Signin with your Social Account
-    <div id="socialIcons">
-      <a id="google" class="fa fa-google" aria-hidden="true"></a>
-      <a id="facebook" class="fa fa-facebook" aria-hidden="true"></a>
-      <a id="tweeter" class="fa fa-twitter" aria-hidden="true"></a>
-    </div>
   </div>
-
-
-</div>
 </fw-dialog>

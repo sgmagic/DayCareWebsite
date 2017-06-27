@@ -1,8 +1,5 @@
 <h1>Welcome {{user.username}}</h1>
-<h3>You are a 
-    <span *ngIf="user.isadmin">Admin</span>
-    <span *ngIf="!user.isadmin">Parent</span>
-</h3>
+
 <h2>Your Password is {{user.password}}</h2>
 
 <button class="btnsignout" md-raised-button (click)="signout()">SIGN OUT</button>

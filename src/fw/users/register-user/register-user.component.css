@@ -9,28 +9,27 @@
 }*/
 
 .register-form{
-    display: flex;
-    align-self: center;;
+   display: flex;
+    align-self: center;
     flex-direction: column;
+    min-width: 300px;
+    border-radius: 5px;
     background-color: white;
     opacity: .93;
     padding: 20px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    color: black;
-    border-radius: 5px;
 }
 
 .alert{
-    margin-top: 30px;
+    margin-top: 20px; 
 }
-
 
 mat-tab-labels{
     align-self: center;
 }
 
 .full-width{
-width: 70%;
+width: 100%;
 align-self:center;
 }
 
@@ -44,6 +43,7 @@ align-self:center;
     display: inline-block;
 font-size: 30px;
 }
+
 
 #socilLogin {
     display: flex;
@@ -151,10 +151,18 @@ input{
     text-align: center;
 }
 
-/*.message{
-    float: right;
-}*/
-
-.error-text{
-    color: red;
+.error{  
+    z-index: 1000;
+    padding: 5px;
+   
+    overflow: visible;
+    position: absolute;
+    margin-top: -50px;
+    margin-bottom: -50px;
+    align-self: center;
+    font-weight: bold;
+     margin-top: auto;
+     font-size: 15px;
+      opacity: .93;
 }
+

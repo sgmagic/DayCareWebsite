@@ -31,8 +31,7 @@ user: User;
     id: 0,
     username: null,
     password: null,
-    retypepassword: null,
-    isadmin: null
+    retypepassword: null
     }
   }
 

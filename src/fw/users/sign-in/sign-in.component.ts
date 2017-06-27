@@ -38,7 +38,6 @@ this.router.navigate(['/home']);
     username: null,
     password: null,
     retypepassword: null,
-    isadmin: null
     }
   }
 
